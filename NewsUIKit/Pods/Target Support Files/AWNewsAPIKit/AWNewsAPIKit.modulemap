@@ -1,0 +1,6 @@
+framework module AWNewsAPIKit {
+  umbrella header "AWNewsAPIKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
