@@ -103,7 +103,7 @@ extension NewsViewController: JXSegmentedListContainerViewDataSource {
     
     public func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
         let vc = NewsListViewController(typeid: newstypes[index].typeId)
-        self.addChild(vc)
+        self.addChildViewController(vc)
         return vc
     }
 }

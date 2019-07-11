@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "AWNewsUIKit"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "A NewsUIKit"
   spec.homepage     = "https://github.com/feixue299/NewsUIKit"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
