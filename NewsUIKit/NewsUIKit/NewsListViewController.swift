@@ -111,7 +111,8 @@ public class NewsListViewController: UITableViewController {
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if let nav = parent?.navigationController {
-            let vc = NewsDetailViewController()
+            let news = newsList[indexPath.row]
+            let vc = NewsDetailViewController(newsid: news.newsId)
             nav.pushViewController(vc, animated: true)
         }
     }
@@ -123,4 +124,3 @@ extension NewsListViewController: JXSegmentedListContainerViewListDelegate {
         return view
     }
 }
-
