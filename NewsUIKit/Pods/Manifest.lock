@@ -1,16 +1,16 @@
 PODS:
-  - Alamofire (4.9.1)
-  - AWNewsAPIKit (0.0.6):
+  - Alamofire (5.2.2)
+  - AWNewsAPIKit (0.0.8):
     - Moya
-  - JXSegmentedView (1.1.0)
-  - Kingfisher (4.10.1)
-  - Moya (13.0.1):
-    - Moya/Core (= 13.0.1)
-  - Moya/Core (13.0.1):
-    - Alamofire (~> 4.1)
-    - Result (~> 4.1)
-  - Result (4.1.0)
-  - SnapKit (4.2.0)
+  - JXSegmentedView (1.2.7)
+  - Kingfisher (5.15.0):
+    - Kingfisher/Core (= 5.15.0)
+  - Kingfisher/Core (5.15.0)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - AWNewsAPIKit
@@ -25,18 +25,16 @@ SPEC REPOS:
     - JXSegmentedView
     - Kingfisher
     - Moya
-    - Result
     - SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  AWNewsAPIKit: 501f2be1a70c1034ef8f547f29f2e3cde9aefec9
-  JXSegmentedView: 072a2979323f98fc5d0e0e5dc2342549ae8a5c8f
-  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
-  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
-  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  AWNewsAPIKit: fd3e3ed2d417d56b2a9eb98dadffde204b40e2c0
+  JXSegmentedView: eb1cad21f57c2543c00c3e08b8fd3c7ca54f5acd
+  Kingfisher: 1acb67597a520c2d0310677e66d6e0af455ef757
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: f6bcc1e3540aa5c1711d6a4d408e0f6ffba03cb8
+PODFILE CHECKSUM: 853b80e81f9aeb68c74591155fc036732a2fac68
 
 COCOAPODS: 1.9.0.beta.2

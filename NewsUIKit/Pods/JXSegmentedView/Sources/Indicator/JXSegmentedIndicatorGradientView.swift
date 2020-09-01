@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 整个背景是一个渐变色layer，通过gradientMaskLayer遮罩显示不同位置，达到不同文字底部有不同的渐变色。
 open class JXSegmentedIndicatorGradientView: JXSegmentedIndicatorBaseView {
     @available(*, deprecated, renamed: "indicatorWidthIncrement")
     open var gradientViewWidthIncrement: CGFloat = 20 {
@@ -35,6 +36,8 @@ open class JXSegmentedIndicatorGradientView: JXSegmentedIndicatorBaseView {
 
         indicatorWidthIncrement = 20
         indicatorHeight = 26
+        indicatorPosition = .center
+        verticalOffset = 0
 
         gradientColors = [UIColor(red: 194.0/255, green: 229.0/255, blue: 156.0/255, alpha: 1).cgColor, UIColor(red: 100.0/255, green: 179.0/255, blue: 244.0/255, alpha: 1).cgColor]
 
@@ -51,7 +54,15 @@ open class JXSegmentedIndicatorGradientView: JXSegmentedIndicatorBaseView {
         let width = getIndicatorWidth(itemFrame: model.currentSelectedItemFrame, itemContentWidth: model.currentItemContentWidth)
         let height = getIndicatorHeight(itemFrame: model.currentSelectedItemFrame)
         let x = model.currentSelectedItemFrame.origin.x + (model.currentSelectedItemFrame.size.width - width)/2
-        let y = (model.currentSelectedItemFrame.size.height - height)/2
+        var y: CGFloat = 0
+        switch indicatorPosition {
+        case .top:
+            y = verticalOffset
+        case .bottom:
+            y = model.currentSelectedItemFrame.size.height - height - verticalOffset
+        case .center:
+            y = (model.currentSelectedItemFrame.size.height - height)/2 + verticalOffset
+        }
         gradientMaskLayerFrame = CGRect(x: x, y: y, width: width, height: height)
         let path = UIBezierPath(roundedRect: gradientMaskLayerFrame, cornerRadius: getIndicatorCornerRadius(itemFrame: model.currentSelectedItemFrame))
         CATransaction.begin()
