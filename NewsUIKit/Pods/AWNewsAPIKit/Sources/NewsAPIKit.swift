@@ -8,6 +8,16 @@
 
 import Moya
 
+public struct APPInfo {
+    public let appid: String
+    public let appSecret: String
+    public static var shareInstance: APPInfo?
+    public init(appid: String, appSecret: String) {
+        self.appid = appid
+        self.appSecret = appSecret
+    }
+}
+
 public enum NewsAPIKit {
     case mzNewsTypes
     case mzNewsList(typeid: Int, page: Int)
@@ -53,7 +63,8 @@ extension NewsAPIKit: TargetType {
     }
     
     public var headers: [String : String]? {
-        return nil
+        guard let appinfo = APPInfo.shareInstance else { return nil }
+        return ["app_id": appinfo.appid, "app_secret": appinfo.appSecret]
     }
     
 }

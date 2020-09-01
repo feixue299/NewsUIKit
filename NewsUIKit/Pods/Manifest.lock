@@ -1,8 +1,8 @@
 PODS:
-  - Alamofire (4.8.2)
-  - AWNewsAPIKit (0.0.5):
+  - Alamofire (4.9.1)
+  - AWNewsAPIKit (0.0.6):
     - Moya
-  - JXSegmentedView (0.0.19)
+  - JXSegmentedView (1.1.0)
   - Kingfisher (4.10.1)
   - Moya (13.0.1):
     - Moya/Core (= 13.0.1)
@@ -14,12 +14,12 @@ PODS:
 
 DEPENDENCIES:
   - AWNewsAPIKit
-  - JXSegmentedView
+  - JXSegmentedView (>= 1.0.0)
   - Kingfisher
   - SnapKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - AWNewsAPIKit
     - JXSegmentedView
@@ -29,14 +29,14 @@ SPEC REPOS:
     - SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  AWNewsAPIKit: 4fb0187d4d33ce19368123468baad0453ab99346
-  JXSegmentedView: 6e22381bd1e6f0767fc078bef1947b13b2d337a1
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AWNewsAPIKit: 501f2be1a70c1034ef8f547f29f2e3cde9aefec9
+  JXSegmentedView: 072a2979323f98fc5d0e0e5dc2342549ae8a5c8f
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
-PODFILE CHECKSUM: 707b4b06fe99a881264abbe50ade58e0d6c8cacd
+PODFILE CHECKSUM: f6bcc1e3540aa5c1711d6a4d408e0f6ffba03cb8
 
-COCOAPODS: 1.7.3
+COCOAPODS: 1.9.0.beta.2

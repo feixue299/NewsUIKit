@@ -1,5 +1,5 @@
 //
-//  MZServer.swift
+//  Server.swift
 //  NewsAPIKit
 //
 //  Created by YB on 2019/7/9.
@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-public struct MZServer<Response: Codable> {
+public struct Server<Response: Codable> {
     public var newsAPIServer = NewsAPIServer()
     public var target: NewsAPIKit
     

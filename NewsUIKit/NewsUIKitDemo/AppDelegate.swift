@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWNewsAPIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        APPInfo.shareInstance = APPInfo(appid: "tqarlcgcsuwqin8w", appSecret: "dUI1MzA1OS83andyM2lrdDZNYnhWUT09")
         return true
     }
 

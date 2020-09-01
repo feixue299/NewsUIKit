@@ -8,4 +8,4 @@
 
 import Foundation
 
-public typealias MZNewsDetailsServer = MZServer<MZNewsDetailsResponse>
+public typealias MZNewsDetailsServer = Server<MZNewsDetailsResponse>

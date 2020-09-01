@@ -6,7 +6,7 @@ use_frameworks!
 
 def newsUIKit_pods
   pod 'AWNewsAPIKit'
-  pod 'JXSegmentedView'
+  pod 'JXSegmentedView', ">=1.0.0"
   pod 'SnapKit'
   pod 'Kingfisher'
 end

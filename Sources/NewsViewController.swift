@@ -92,7 +92,7 @@ extension NewsViewController: JXSegmentedViewDelegate {
     }
     
     public func segmentedView(_ segmentedView: JXSegmentedView, scrollingFrom leftIndex: Int, to rightIndex: Int, percent: CGFloat) {
-        listContainerView.segmentedViewScrolling(from: leftIndex, to: rightIndex, percent: percent, selectedIndex: segmentedView.selectedIndex)
+        listContainerView.didClickSelectedItem(at: rightIndex)
     }
 }
 

@@ -9,4 +9,4 @@
 import Foundation
 import Moya
 
-public typealias MZNewsTypesServer = MZServer<MZNewsTypesResponse>
+public typealias MZNewsTypesServer = Server<MZNewsTypesResponse>
