@@ -8,12 +8,13 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "AWNewsUIKit"
-  spec.version      = "0.0.4"
+  spec.version      = "0.0.5"
   spec.summary      = "A NewsUIKit"
   spec.homepage     = "https://github.com/feixue299/NewsUIKit"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "wpf" => "1569485690@qq.com" }
-  spec.platform     = :ios, "8.0"
+  spec.platform     = :ios, "10.0"
+  spec.swift_version = '5.0'
   spec.source       = { :git => "https://github.com/feixue299/NewsUIKit.git", :tag => "#{spec.version}" }
   spec.source_files  = "Sources", "Sources/**/*.{swift}"
   spec.requires_arc = true
