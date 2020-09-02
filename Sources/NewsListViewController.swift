@@ -33,7 +33,7 @@ open class NewsListViewController<Detail: NewsDetailViewController>: UITableView
         super.init(coder: aDecoder)
     }
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(NewsCell.classForCoder(), forCellReuseIdentifier: "cell")

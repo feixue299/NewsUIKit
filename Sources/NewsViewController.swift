@@ -42,7 +42,7 @@ open class NewsViewController<Detail: NewsDetailViewController, ListController: 
         return view
     }()
     
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
         segmentView.delegate = self
