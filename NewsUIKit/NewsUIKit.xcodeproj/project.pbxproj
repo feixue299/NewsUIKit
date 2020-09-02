@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18A18CE4D0EF23412D506226 /* Pods_NewsUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B50C41F356E8D93A78AD6CE /* Pods_NewsUIKit.framework */; };
+		1F5C580224FF298B00FC57BD /* DefaultNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5C580124FF298B00FC57BD /* DefaultNewsViewController.swift */; };
 		380C724F22D58A6B005BF8A7 /* NewsUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 380C724D22D58A6B005BF8A7 /* NewsUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		380C725C22D59073005BF8A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C725B22D59073005BF8A7 /* AppDelegate.swift */; };
 		380C725E22D59073005BF8A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C725D22D59073005BF8A7 /* ViewController.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		0335A73E722037F24AAC8E8F /* Pods-NewsUIKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsUIKit.release.xcconfig"; path = "Target Support Files/Pods-NewsUIKit/Pods-NewsUIKit.release.xcconfig"; sourceTree = "<group>"; };
+		1F5C580124FF298B00FC57BD /* DefaultNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNewsViewController.swift; sourceTree = "<group>"; };
 		2F9B1DB0204F2C05C8B23183 /* Pods-NewsUIKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsUIKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-NewsUIKitDemo/Pods-NewsUIKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		380C724A22D58A6B005BF8A7 /* NewsUIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NewsUIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		380C724D22D58A6B005BF8A7 /* NewsUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsUIKit.h; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				3894EA2122D727A800CB2192 /* NewsCell.swift */,
 				3894EA2222D727A800CB2192 /* NewsViewController.swift */,
 				3894EA2322D727A800CB2192 /* NewsListViewController.swift */,
+				1F5C580124FF298B00FC57BD /* DefaultNewsViewController.swift */,
 			);
 			name = Sources;
 			path = ../../Sources;
@@ -357,6 +360,7 @@
 			files = (
 				3894EA2622D727A800CB2192 /* NewsViewController.swift in Sources */,
 				3894EA2522D727A800CB2192 /* NewsCell.swift in Sources */,
+				1F5C580224FF298B00FC57BD /* DefaultNewsViewController.swift in Sources */,
 				3894EA2422D727A800CB2192 /* NewsDetailViewController.swift in Sources */,
 				3894EA2722D727A800CB2192 /* NewsListViewController.swift in Sources */,
 			);

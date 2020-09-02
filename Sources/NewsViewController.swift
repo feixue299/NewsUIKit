@@ -10,8 +10,9 @@ import UIKit
 import JXSegmentedView
 import SnapKit
 import AWNewsAPIKit
+import LYEmptyView
 
-public class NewsViewController: UIViewController {
+open class NewsViewController<Detail: NewsDetailViewController, ListController: NewsListViewController<Detail>>: UIViewController, JXSegmentedListContainerViewDataSource {
     
     private let segmentView = JXSegmentedView()
     private let segmentDataSource: JXSegmentedTitleDataSource = {
@@ -49,6 +50,9 @@ public class NewsViewController: UIViewController {
         segmentView.dataSource = segmentDataSource
         segmentView.indicators = [indicator]
         segmentView.backgroundColor = UIColor.groupTableViewBackground
+        listContainerView.ly_emptyView = LYEmptyView.emptyActionView(with: nil, titleStr: "无数据", detailStr: "当前没有数据", btnTitleStr: "重新加载", btnClick: { [weak self] in
+            self?.requestSegment()
+        })
         
         view.addSubview(segmentView)
         view.addSubview(listContainerView)
@@ -80,6 +84,16 @@ public class NewsViewController: UIViewController {
             print("moyaError:\(moyaError.localizedDescription)")
         })
     }
+    
+    public func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
+        return segmentDataSource.titles.count
+    }
+    
+    public func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
+        let vc = ListController(typeid: newstypes[index].typeId)
+        self.addChild(vc)
+        return vc
+    }
 }
 
 extension NewsViewController: JXSegmentedViewDelegate {
@@ -93,18 +107,6 @@ extension NewsViewController: JXSegmentedViewDelegate {
     
     public func segmentedView(_ segmentedView: JXSegmentedView, scrollingFrom leftIndex: Int, to rightIndex: Int, percent: CGFloat) {
         listContainerView.didClickSelectedItem(at: rightIndex)
-    }
-}
-
-extension NewsViewController: JXSegmentedListContainerViewDataSource {
-    public func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
-        return segmentDataSource.titles.count
-    }
-    
-    public func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
-        let vc = NewsListViewController(typeid: newstypes[index].typeId)
-        self.addChild(vc)
-        return vc
     }
 }
 

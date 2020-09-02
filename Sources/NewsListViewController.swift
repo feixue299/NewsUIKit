@@ -10,8 +10,9 @@ import UIKit
 import JXSegmentedView
 import AWNewsAPIKit
 import Kingfisher
+import LYEmptyView
 
-public class NewsListViewController: UITableViewController {
+open class NewsListViewController<Detail: NewsDetailViewController>: UITableViewController, JXSegmentedListContainerViewListDelegate {
     
     private let typeid: Int
     private var newsList: [MZNews] = [] {
@@ -22,12 +23,12 @@ public class NewsListViewController: UITableViewController {
     private var currentPage = 1
     private var isLoading: Bool = false
     
-    init(typeid: Int) {
+    public required init(typeid: Int) {
         self.typeid = typeid
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         self.typeid = 0
         super.init(coder: aDecoder)
     }
@@ -39,6 +40,10 @@ public class NewsListViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        
+        tableView.ly_emptyView = LYEmptyView.emptyActionView(with: nil, titleStr: "无数据", detailStr: "当前没有数据，请稍后再试", btnTitleStr: "重新加载", btnClick: { [weak self] in
+            self?.refreshData()
+        })
         
         refreshData()
     }
@@ -112,15 +117,13 @@ public class NewsListViewController: UITableViewController {
         
         if let nav = parent?.navigationController {
             let news = newsList[indexPath.row]
-            let vc = NewsDetailViewController(newsid: news.newsId)
+            let vc = Detail(newsid: news.newsId)
             nav.pushViewController(vc, animated: true)
         }
     }
-
-}
-
-extension NewsListViewController: JXSegmentedListContainerViewListDelegate {
+    
     public func listView() -> UIView {
         return view
     }
+
 }

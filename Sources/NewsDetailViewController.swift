@@ -8,27 +8,31 @@
 
 import UIKit
 import AWNewsAPIKit
+import LYEmptyView
 
-class NewsDetailViewController: UIViewController {
+open class NewsDetailViewController: UIViewController {
     
     private let newsid: String
     private let scrollView = UIScrollView()
     
-    init(newsid: String) {
+    public required init(newsid: String) {
         self.newsid = newsid
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         self.newsid = ""
         super.init(coder: aDecoder)
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
         navigationItem.title = "详情"
+        view.ly_emptyView = LYEmptyView.emptyActionView(with: nil, titleStr: "无数据", detailStr: "当前没有数据，请稍后再试", btnTitleStr: "重新加载", btnClick: { [weak self] in
+            self?.requestDetail()
+        })
         
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { (maker) in
@@ -107,11 +111,14 @@ class NewsDetailViewController: UIViewController {
             switch result {
             case .success(let response):
                 self.createViews(response)
+                self.view.ly_hideEmpty()
             case .failure(let error):
                 print("error:\(error.localizedDescription)")
+                self.view.ly_showEmpty()
             }
         }) { (moyaError) in
             print("moyaError:\(moyaError.localizedDescription)")
+            self.view.ly_showEmpty()
         }
     }
 }

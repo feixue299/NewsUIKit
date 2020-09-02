@@ -23,7 +23,13 @@ public struct Server<Response: Codable> {
         newsAPIServer.request(target) { (result) in
             switch result {
             case .success(let value):
-                print("value:\(try! value.mapJSON())")
+                if let json = try? value.mapJSON() {
+                    print("json:\(json)")
+                } else if let string = try? value.mapString() {
+                    print("string:\(string)")
+                } else if let image = try? value.mapImage() {
+                    print("image:\(image)")
+                }
                 success?(RequestResult.init(catching: { () -> Response in
                     return try JSONDecoder().decode(Response.self, from: value.data)
                 }))

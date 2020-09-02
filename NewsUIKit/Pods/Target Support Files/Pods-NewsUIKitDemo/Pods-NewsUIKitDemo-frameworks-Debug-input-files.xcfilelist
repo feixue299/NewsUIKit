@@ -3,5 +3,6 @@ ${BUILT_PRODUCTS_DIR}/AWNewsAPIKit/AWNewsAPIKit.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/JXSegmentedView/JXSegmentedView.framework
 ${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/LYEmptyView/LYEmptyView.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework

@@ -8,12 +8,12 @@
 
 import UIKit
 import AWNewsAPIKit
+import NewsUIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         APPInfo.shareInstance = APPInfo(appid: "tqarlcgcsuwqin8w", appSecret: "dUI1MzA1OS83andyM2lrdDZNYnhWUT09")
