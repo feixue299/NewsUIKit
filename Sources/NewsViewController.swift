@@ -2,8 +2,8 @@
 //  NewsViewController.swift
 //  NewsUIKit
 //
-//  Created by YB on 2019/7/10.
-//  Copyright © 2019 YB. All rights reserved.
+//  Created by Mr.wu on 2019/7/10.
+//  Copyright © 2019 Mr.wu. All rights reserved.
 //
 
 import UIKit
@@ -50,7 +50,7 @@ open class NewsViewController<Detail: NewsDetailViewController, ListController: 
         segmentView.dataSource = segmentDataSource
         segmentView.indicators = [indicator]
         segmentView.backgroundColor = UIColor.groupTableViewBackground
-        listContainerView.ly_emptyView = LYEmptyView.emptyActionView(with: nil, titleStr: "无数据", detailStr: "当前没有数据", btnTitleStr: "重新加载", btnClick: { [weak self] in
+        view.ly_emptyView = LYEmptyView.emptyActionView(with: nil, titleStr: "无数据", detailStr: "当前没有数据", btnTitleStr: "重新加载", btnClick: { [weak self] in
             self?.requestSegment()
         })
         
@@ -77,19 +77,22 @@ open class NewsViewController<Detail: NewsDetailViewController, ListController: 
             switch result {
             case .success(let response):
                 self.newstypes = response.data
+                self.view.ly_hideEmpty()
             case .failure(let error):
                 print("error:\(error.localizedDescription)")
+                self.view.ly_showEmpty()
             }
         }, failure: { (moyaError) in
             print("moyaError:\(moyaError.localizedDescription)")
+            self.view.ly_showEmpty()
         })
     }
     
-    public func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
+    open func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int {
         return segmentDataSource.titles.count
     }
     
-    public func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
+    open func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
         let vc = ListController(typeid: newstypes[index].typeId)
         self.addChild(vc)
         return vc

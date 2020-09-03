@@ -3,7 +3,7 @@
 //  NewsUIKit
 //
 //  Created by Mr.wu on 2020/9/2.
-//  Copyright © 2020 YB. All rights reserved.
+//  Copyright © 2020 Mr.wu. All rights reserved.
 //
 
 import UIKit

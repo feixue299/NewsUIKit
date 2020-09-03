@@ -2,8 +2,8 @@
 //  NewsListViewController.swift
 //  NewsUIKit
 //
-//  Created by YB on 2019/7/10.
-//  Copyright © 2019 YB. All rights reserved.
+//  Created by Mr.wu on 2019/7/10.
+//  Copyright © 2019 Mr.wu. All rights reserved.
 //
 
 import UIKit
