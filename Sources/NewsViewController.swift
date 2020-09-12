@@ -27,7 +27,8 @@ open class NewsViewController: UIViewController, JXSegmentedListContainerViewDat
         i.indicatorWidth = 20
         return i
     }()
-    private var newstypes: [MZNewsType] = [] {
+    
+    open var newstypes: [MZNewsType] = [] {
         didSet {
             segmentDataSource.titles = newstypes.map({ $0.typeName })
             segmentDataSource.reloadData(selectedIndex: 0)
