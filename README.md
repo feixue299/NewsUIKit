@@ -10,7 +10,7 @@
 For AWNewsUIKit, use the following entry in your Podfile:
 
 ```rb
-pod 'AWNewsUIKit', '~> 0.0.7'
+pod 'AWNewsUIKit', '~> 0.1.0'
 ```
 
 Then run `pod install`.

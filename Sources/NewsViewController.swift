@@ -12,7 +12,7 @@ import SnapKit
 import AWNewsAPIKit
 import LYEmptyView
 
-open class NewsViewController<Detail: NewsDetailViewController, ListController: NewsListViewController<Detail>>: UIViewController, JXSegmentedListContainerViewDataSource {
+open class NewsViewController: UIViewController, JXSegmentedListContainerViewDataSource {
     
     private let segmentView = JXSegmentedView()
     private let segmentDataSource: JXSegmentedTitleDataSource = {
@@ -93,7 +93,7 @@ open class NewsViewController<Detail: NewsDetailViewController, ListController: 
     }
     
     open func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
-        let vc = ListController(typeid: newstypes[index].typeId)
+        let vc = Injection.newsList(newstypes[index].typeId).viewController
         self.addChild(vc)
         return vc
     }

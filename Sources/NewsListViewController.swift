@@ -12,7 +12,7 @@ import AWNewsAPIKit
 import Kingfisher
 import LYEmptyView
 
-open class NewsListViewController<Detail: NewsDetailViewController>: UITableViewController, JXSegmentedListContainerViewListDelegate {
+open class NewsListViewController: UITableViewController, JXSegmentedListContainerViewListDelegate, NewsListProtocol {
     
     private let typeid: Int
     private var newsList: [MZNews] = [] {
@@ -117,7 +117,7 @@ open class NewsListViewController<Detail: NewsDetailViewController>: UITableView
         
         if let nav = parent?.navigationController {
             let news = newsList[indexPath.row]
-            let vc = Detail(newsid: news.newsId)
+            let vc = Injection.newsDetail(news.newsId).viewController
             nav.pushViewController(vc, animated: true)
         }
     }

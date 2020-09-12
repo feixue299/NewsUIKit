@@ -10,7 +10,7 @@ import UIKit
 import AWNewsAPIKit
 import LYEmptyView
 
-open class NewsDetailViewController: UIViewController {
+open class NewsDetailViewController: UIViewController, NewsDetailProtocol {
     
     private let newsid: String
     private let scrollView = UIScrollView()
@@ -105,7 +105,7 @@ open class NewsDetailViewController: UIViewController {
         }
     }
     
-    func requestDetail() {
+    private func requestDetail() {
         let detailServer = MZNewsDetailsServer(target: .mzNewsDetails(newsid: newsid))
         detailServer.request({ (result) in
             switch result {
@@ -155,3 +155,4 @@ private enum ParseContentType {
     case img(id: String)
     case b(content: String)
 }
+
