@@ -32,10 +32,10 @@ public extension NewsListProtocol where Self: UIViewController & JXSegmentedList
 }
 
 public struct Injection {
-    static var newsDetail: ((_ newsid: String) -> NewsDetailProtocol) = { (newsid) in
+    public static var newsDetail: ((_ newsid: String) -> NewsDetailProtocol) = { (newsid) in
         return NewsDetailViewController(newsid: newsid)
     }
-    static var newsList: ((_ typeid: Int) -> NewsListProtocol) = { (typeid) in
+    public static var newsList: ((_ typeid: Int) -> NewsListProtocol) = { (typeid) in
         return NewsListViewController(typeid: typeid)
     }
     
