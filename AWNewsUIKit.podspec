@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
   spec.source_files  = "Sources", "Sources/**/*.{swift}"
   spec.requires_arc = true
   spec.dependency "AWNewsAPIKit"
-  spec.dependency "JXSegmentedView", ">=1.0.0"
+  spec.dependency "JXSegmentedView", "~>1.0"
   spec.dependency "SnapKit"
   spec.dependency "Kingfisher"
   spec.dependency "LYEmptyView"
